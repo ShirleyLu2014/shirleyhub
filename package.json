@@ -1,0 +1,29 @@
+{
+  "name": "shirleyhub",
+  "version": "1.0.0",
+  "description": "node后端管理系统",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShirleyLu2014/shirleyhub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShirleyLu2014/shirleyhub/issues"
+  },
+  "homepage": "https://github.com/ShirleyLu2014/shirleyhub#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^12.0.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
