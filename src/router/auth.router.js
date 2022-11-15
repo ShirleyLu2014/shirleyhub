@@ -1,6 +1,6 @@
 // 登录授权接口
 const Router = require("koa-router");
-const { login } = require("../cotroller/auth.controller.js");
+const { login } = require("../controller/auth.controller.js");
 const {
   verifyUserIsExists,
   verifyUserPassword,

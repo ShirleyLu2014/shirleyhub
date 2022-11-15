@@ -3,6 +3,8 @@ const {
   NAME_ALREAD_EXISTS,
   NAME_IS_NOT__EXISTS,
   PASSWORD_IS_ERROR,
+  TOKEN_IS_INVALID,
+  USERID_IS_NULL
 } = require("../constants/error-type");
 const errHandle = (err, ctx) => {
   let status, message;
@@ -19,6 +21,12 @@ const errHandle = (err, ctx) => {
       status = 400;
       break;
     case PASSWORD_IS_ERROR:
+      status = 400;
+      break;
+    case TOKEN_IS_INVALID:
+      status = 405;
+      break;
+    case USERID_IS_NULL:
       status = 400;
       break;
     default:

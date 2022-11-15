@@ -1,5 +1,5 @@
 const Router = require("koa-router");
-const { create } = require("../cotroller/user.controller");
+const { create } = require("../controller/user.controller");
 const { verifyUser } = require("../middleware/user.middleware");
 const {
   verifyIsEmpty,
