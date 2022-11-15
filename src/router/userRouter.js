@@ -1,8 +1,13 @@
 const Router = require("koa-router");
 const { create } = require("../cotroller/user.controller");
 const { verifyUser } = require("../middleware/user.middleware");
+const {
+  verifyIsEmpty,
+  handlePassword,
+} = require("../middleware/verifyCommon.middleware");
 const userRouter = new Router({
   prefix: "/user",
 });
-userRouter.post("/", verifyUser, create);
+// 用户创建接口
+userRouter.post("/", verifyIsEmpty, verifyUser, handlePassword, create);
 module.exports = userRouter;

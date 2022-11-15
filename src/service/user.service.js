@@ -1,4 +1,5 @@
 const connection = require("../app/database");
+// const md5Encrypt = require("../utils/password-handle");
 class UserService {
   async create(user) {
     const { name, password } = user;
