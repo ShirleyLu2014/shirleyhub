@@ -7,7 +7,11 @@ const {
   USERID_IS_NULL,
   USERID_IS_NOT_LEGAL,
 } = require("../constants/error-type");
-const { MOMENT_CONTENT_IS_NULL } = require("../constants/moment");
+const { 
+  MOMENT_CONTENT_IS_NULL,
+  MOMENT_ID_IS_NULL,
+  MOMENT_IS_NOT_LEGAL
+ } = require("../constants/moment");
 const userErrorHandle = (err, ctx) => {
   let status, message;
   switch (err.message) {
@@ -37,6 +41,12 @@ const userErrorHandle = (err, ctx) => {
     case MOMENT_CONTENT_IS_NULL:
       console.log(111);
       status = 400;
+      break;
+    case MOMENT_ID_IS_NULL:
+      status = 400;
+      break;
+    case MOMENT_IS_NOT_LEGAL:
+      status = 405;
       break;
     default:
       status = 404;

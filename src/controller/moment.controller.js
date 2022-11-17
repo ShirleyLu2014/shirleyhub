@@ -36,8 +36,25 @@ class momentController {
   }
   // 更新动态
   async update(ctx, next) {
-    console.log("更新动态");
-    ctx.body = "更新动态成功";
+    try {
+      const result = await momentService.updateMoment(ctx.request.body);
+      console.log(result);
+      console.log("更新动态");
+      ctx.body = "更新动态成功";
+    } catch(err) {
+      console.log(err)
+      console.log("更新动态失败")
+    }
+  }
+  // 删除动态
+  async deleteMoment(ctx, next) {
+    const { momentId } = ctx.request.body;
+    try {
+      const result = await momentService.deleteMoment(momentId)
+      ctx.body = "删除动态成功";
+    }catch(err) {
+      console.log("删除失败")
+    }
   }
 }
 module.exports = new momentController();
